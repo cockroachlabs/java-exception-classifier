@@ -169,6 +169,7 @@ public final class ExceptionClassifier {
         }
       }
     }
+    logger.trace("No match for exception", t);
     return false;
   }
 
