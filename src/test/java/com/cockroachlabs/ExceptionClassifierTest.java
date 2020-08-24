@@ -153,6 +153,7 @@ public class ExceptionClassifierTest {
     Assert.assertTrue(c.shouldRetry(new SQLException("kabooom", "40001")));
     Assert.assertFalse(c.shouldRetry(new SQLException("kabooom", "45678")));
     Assert.assertFalse(c.shouldRetry(new SQLException("This should throw.", "40001")));
+    Assert.assertFalse(c.shouldRetry(new SQLException("This should throw.", (String)null)));
   }
 
 

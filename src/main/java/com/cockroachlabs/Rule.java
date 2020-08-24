@@ -61,7 +61,7 @@ class Rule {
     if (!target.isAssignableFrom(t.getClass())) {
       return Action.IGNORE;
     }
-    if (sqlState != null && !sqlState.contentEquals(((SQLException) t).getSQLState())) {
+    if (sqlState != null && !sqlState.equalsIgnoreCase(((SQLException) t).getSQLState())) {
       return Action.IGNORE;
     }
     if (pattern != null && !pattern.matcher(msg).find()) {
